@@ -49,12 +49,16 @@ namespace NovaSamples.UIControls
 
                 // Notify listeners
                 OnValueChanged?.Invoke(this.value);
+
+                // Update volume
+                AudioListener.volume = this.value / Max;
             }
         }
 
         [SerializeField]
-        [Tooltip("The mininum value for the given slider.")]
+        [Tooltip("The minimum value for the given slider.")]
         private float Min = 0;
+
         [SerializeField]
         [Tooltip("The maximum value for the given slider.")]
         private float Max = 100;
@@ -62,6 +66,8 @@ namespace NovaSamples.UIControls
         [SerializeField]
         [Tooltip("The string format to use when displaying the slider value to the end user.")]
         private string unitsFormat = "{0:0.00}";
+
+        private const string PlayerPrefsKey = "SliderValue";
 
         private void OnEnable()
         {
@@ -80,11 +86,26 @@ namespace NovaSamples.UIControls
             View.UIBlock.AddGestureHandler<Gesture.OnCancel, SliderVisuals>(SliderVisuals.HandlePressCanceled);
             View.UIBlock.AddGestureHandler<Navigate.OnDirection, SliderVisuals>(HandleSliderAdjusted);
 
+            // Load the saved value from PlayerPrefs
+            if (PlayerPrefs.HasKey(PlayerPrefsKey))
+            {
+                Value = PlayerPrefs.GetFloat(PlayerPrefsKey, Max);
+            }
+            else
+            {
+                // Set the default value to Max
+                Value = Max;
+            }
+
             UpdateFillBar();
         }
 
         private void OnDisable()
         {
+            // Save the current value to PlayerPrefs
+            PlayerPrefs.SetFloat(PlayerPrefsKey, value);
+            PlayerPrefs.Save();
+
             // Unsubscribe from events
             View.UIBlock.RemoveGestureHandler<Gesture.OnHover, SliderVisuals>(SliderVisuals.HandleHovered);
             View.UIBlock.RemoveGestureHandler<Gesture.OnUnhover, SliderVisuals>(SliderVisuals.HandleUnhovered);
@@ -135,7 +156,7 @@ namespace NovaSamples.UIControls
         {
             if (evt.Direction.x == 0)
             {
-                // Direct not along draggable axis
+                // Direction not along draggable axis
                 return;
             }
 
