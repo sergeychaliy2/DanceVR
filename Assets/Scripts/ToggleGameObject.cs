@@ -9,13 +9,11 @@ public class ToggleGameObject : MonoBehaviour
     {
         if (settingsMenu != null && primeMenu != null)
         {
-            // Если settingsMenu включено, выключаем его и включаем primeMenu
             if (settingsMenu.activeSelf)
             {
                 settingsMenu.SetActive(false);
                 primeMenu.SetActive(true);
             }
-            // Если primeMenu включено, выключаем его и включаем settingsMenu
             else if (primeMenu.activeSelf)
             {
                 settingsMenu.SetActive(true);
