@@ -13,10 +13,6 @@ public class MenuController : MonoBehaviour
             primeMenuButton.SetActive(false);
             exitConfirmation.SetActive(true);
         }
-        else
-        {
-            Debug.LogWarning("PrimeMenuButton or ExitConfirmation GameObject is not assigned.");
-        }
     }
     //on PrimeMenuButton
     public void HideExitConfirmation()
@@ -25,10 +21,6 @@ public class MenuController : MonoBehaviour
         {
             primeMenuButton.SetActive(true);
             exitConfirmation.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("PrimeMenuButton or ExitConfirmation GameObject is not assigned.");
         }
     }
 

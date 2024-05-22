@@ -14,7 +14,11 @@ namespace NovaSamples.UIControls
 
         [Tooltip("The toggle state of this toggle control")]
         [SerializeField]
-        private bool toggledOn = false;
+        private bool toggledOn = true;
+
+        [Tooltip("AudioSource to disable when toggled off")]
+        [SerializeField]
+        private AudioSource audioSource = null;
 
         /// <summary>
         /// The state of this toggle control
@@ -32,6 +36,12 @@ namespace NovaSamples.UIControls
                 toggledOn = value;
 
                 UpdateToggleIndicator();
+
+                // Update the audio source state based on the toggledOn value
+                if (audioSource != null)
+                {
+                    audioSource.enabled = toggledOn;
+                }
 
                 OnToggled?.Invoke(toggledOn);
             }

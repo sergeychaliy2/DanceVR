@@ -25,6 +25,23 @@ public class OffMusicTheme : MonoBehaviour
         }
     }
 
+    public void OnMuteMusic()
+    {
+        if (sliderMusic != null)
+        {
+            sliderMusic.SetActive(true);
+        }
+
+    }
+
+    public void OnShowThemeList()
+    {
+        if (themeList != null)
+        {
+            themeList.SetActive(true);
+        }
+    }
+
     public void AllMusicTheme()
     {
         if (sliderMusic != null && themeList != null)

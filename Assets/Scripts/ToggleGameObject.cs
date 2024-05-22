@@ -20,9 +20,5 @@ public class ToggleGameObject : MonoBehaviour
                 primeMenu.SetActive(false);
             }
         }
-        else
-        {
-            Debug.LogWarning("Settings Menu or Prime Menu GameObject is not assigned.");
-        }
     }
 }
