@@ -640,6 +640,42 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
   m_PrefabInstance: {fileID: 707155599}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &132596612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8454702199038298300, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+  m_PrefabInstance: {fileID: 1910422940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &132596619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132596612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7294aa4400e5d834aa523ddd04db49a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneAnimator: {fileID: 1660270448}
+  nameFile: Overhead Squat
+  filePath: AnimPref/
+--- !u!114 &132596620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132596612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bade25a6adc8c3a4cbe072fe36e56bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToDisable:
+  - {fileID: 1724450239}
+  objectsToEnable:
+  - {fileID: 1660270448}
 --- !u!224 &142087894 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2451233653173790359, guid: 99e4b1a4ccedabd4599ff886f4a878d5, type: 3}
@@ -16604,6 +16640,42 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1607986535}
   m_SourcePrefab: {fileID: 100100000, guid: 99e4b1a4ccedabd4599ff886f4a878d5, type: 3}
+--- !u!1 &1450397342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7484679275621607332, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+  m_PrefabInstance: {fileID: 1910422940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1450397349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450397342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7294aa4400e5d834aa523ddd04db49a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneAnimator: {fileID: 1660270448}
+  nameFile: Burpee
+  filePath: AnimPref/
+--- !u!114 &1450397350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450397342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bade25a6adc8c3a4cbe072fe36e56bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToDisable:
+  - {fileID: 1724450239}
+  objectsToEnable:
+  - {fileID: 1660270448}
 --- !u!1 &1465057282
 GameObject:
   m_ObjectHideFlags: 0
@@ -22640,7 +22712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7484679274753918305, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: m_text
-      value: Exercise 3
+      value: Burpee
       objectReference: {fileID: 0}
     - target: {fileID: 7484679274753918305, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: m_fontSize
@@ -22748,30 +22820,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1450397349}
+    - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1450397350}
     - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeSkyboxMaterial
+      value: LoadAndAttachPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ToggleObjects
       objectReference: {fileID: 0}
     - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ChangeSkybox, Assembly-CSharp
+      value: LoadPrefab, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HelthButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484679275621607359, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8454702197333928098, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
@@ -22804,7 +22900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8454702198296455801, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: m_text
-      value: Exercise 4
+      value: Overhead
       objectReference: {fileID: 0}
     - target: {fileID: 8454702198296455801, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: m_fontSize
@@ -22824,30 +22920,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 132596619}
+    - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 132596620}
     - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeSkyboxMaterial
+      value: LoadAndAttachPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ToggleObjects
       objectReference: {fileID: 0}
     - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ChangeSkybox, Assembly-CSharp
+      value: LoadPrefab, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HelthButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454702199038298279, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8454702199038298298, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
@@ -23215,6 +23335,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8711672492054674961, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
       insertIndex: 6
       addedObject: {fileID: 1476345398}
+    - targetCorrespondingSourceObject: {fileID: 7484679275621607332, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 1450397350}
+    - targetCorrespondingSourceObject: {fileID: 7484679275621607332, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 1450397349}
+    - targetCorrespondingSourceObject: {fileID: 8454702199038298300, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 132596620}
+    - targetCorrespondingSourceObject: {fileID: 8454702199038298300, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 132596619}
   m_SourcePrefab: {fileID: 100100000, guid: db2faff79ba10e548bfcb494aed8ea16, type: 3}
 --- !u!4 &1910422941 stripped
 Transform:

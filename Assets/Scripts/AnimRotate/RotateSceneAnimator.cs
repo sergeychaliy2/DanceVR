@@ -5,7 +5,7 @@ public class SceneAnimator : MonoBehaviour
     public float rotationSpeed = 1.0f; // Скорость вращения объекта
     private Vector3 initialPosition;
     private float timer = 0f;
-    private const float positionUpdateInterval = 15f; // Интервал обновления начальной позиции
+    private const float positionUpdateInterval = 10f; // Интервал обновления начальной позиции в секундах
 
     void Start()
     {
@@ -28,17 +28,20 @@ public class SceneAnimator : MonoBehaviour
 
     void RotateTowardsCamera()
     {
-        // Проверяем, что есть основная камера
+        // Проверяем, что основная камера существует
         if (Camera.main != null)
         {
-            // Находим направление камеры от объекта
-            Vector3 direction = Camera.main.transform.position - initialPosition;
+            // Вычисляем направление от объекта к камере
+            Vector3 direction = Camera.main.transform.position - transform.position;
             direction.y = 0f; // Ограничиваем вращение только по горизонтали
 
-            // Обнуляем позицию объекта по всем осям
-            transform.position = initialPosition;
+            // Сохраняем текущие координаты объекта по осям X и Z
+            Vector3 currentPosition = transform.position;
+            currentPosition.x = initialPosition.x;
+            currentPosition.z = initialPosition.z;
+            transform.position = currentPosition;
 
-            // Находим необходимый поворот камеры к объекту
+            // Вычисляем необходимый поворот объекта к камере
             Quaternion rotation = Quaternion.LookRotation(direction);
 
             // Плавно поворачиваем объект к камере
@@ -46,7 +49,7 @@ public class SceneAnimator : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Main camera is not found in the scene.");
+            Debug.LogWarning("Основная камера не найдена в сцене.");
         }
     }
 }

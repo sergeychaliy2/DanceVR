@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 2668303293794764580}
   - component: {fileID: 8351814878634810718}
   - component: {fileID: 8545705649661540369}
-  - component: {fileID: 6865756211773065153}
+  - component: {fileID: 1619315172191014892}
   m_Layer: 0
   m_Name: Hip Hop Dancing
   m_TagString: Untagged
@@ -959,7 +959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3336154784285859230}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.66, y: 10, z: 0.66}
   m_ConstrainProportionsScale: 0
@@ -967,7 +967,7 @@ Transform:
   - {fileID: 5505184235083400533}
   - {fileID: 7590788008575117232}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8351814878634810718
 Animator:
   serializedVersion: 5
@@ -1085,7 +1085,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6865756211773065153
+--- !u!114 &1619315172191014892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
