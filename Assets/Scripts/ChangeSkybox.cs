@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ChangeSkybox : MonoBehaviour
 {
-    public Material newSkyboxMaterial;
+    public string skyboxAddress;
 
     void Start()
     {
@@ -16,10 +18,34 @@ public class ChangeSkybox : MonoBehaviour
 
     public void ChangeSkyboxMaterial()
     {
-        if (newSkyboxMaterial != null)
+        if (!string.IsNullOrEmpty(skyboxAddress))
         {
-            RenderSettings.skybox = newSkyboxMaterial;
-            DynamicGI.UpdateEnvironment();
+            Addressables.LoadAssetAsync<Material>(skyboxAddress).Completed += OnSkyboxLoaded;
+        }
+        else
+        {
+            Debug.LogError("Адрес ассета скайбокса не задан");
+        }
+    }
+
+    private void OnSkyboxLoaded(AsyncOperationHandle<Material> obj)
+    {
+        if (obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            Material newSkyboxMaterial = obj.Result;
+            if (newSkyboxMaterial != null)
+            {
+                RenderSettings.skybox = newSkyboxMaterial;
+                DynamicGI.UpdateEnvironment();
+            }
+            else
+            {
+                Debug.LogError("Загруженный материал скайбокса равен null");
+            }
+        }
+        else
+        {
+            Debug.LogError("Не удалось загрузить материал скайбокса по адресу: " + skyboxAddress);
         }
     }
 }

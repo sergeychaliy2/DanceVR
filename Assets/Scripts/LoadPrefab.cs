@@ -1,40 +1,42 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class LoadPrefab : MonoBehaviour
 {
-    public GameObject sceneAnimator; // Поле для передачи объекта SceneAnimator через инспектор
-    public string nameFile;
-    [SerializeField]
-    private string filePath = "AnimPref/";
-    private string path;
+    public GameObject sceneAnimator;
+    public string address; // Адрес, используемый для загрузки ассета
 
-    // Метод для загрузки и создания префаба
     public void LoadAndAttachPrefab()
     {
-        path = filePath + nameFile;
-        // Загрузите префаб из папки Resources/AnimPref
-        GameObject prefab = Resources.Load<GameObject>(path);
-
-        // Убедитесь, что префаб успешно загружен
-        if (prefab == null)
+        if (string.IsNullOrEmpty(address))
         {
-            Debug.LogError("Prefab '" + path + "' не найден по пути 'Resources/AnimPref/'");
+            Debug.LogError("Адрес ассета не задан");
             return;
         }
 
-        // Убедитесь, что объект SceneAnimator передан через инспектор
         if (sceneAnimator == null)
         {
             Debug.LogError("Объект SceneAnimator не был передан через инспектор");
             return;
         }
 
-        // Создайте экземпляр префаба и сделайте его дочерним элементом объекта SceneAnimator
-        GameObject instance = Instantiate(prefab, sceneAnimator.transform);
+        Addressables.LoadAssetAsync<GameObject>(address).Completed += OnPrefabLoaded;
+    }
 
-        // Сохраняем rotation и scale префаба для его экземпляра
-        instance.transform.localPosition = Vector3.zero;
-        instance.transform.localRotation = prefab.transform.localRotation; // сохраняем rotation префаба
-        instance.transform.localScale = prefab.transform.localScale; // сохраняем scale префаба
+    private void OnPrefabLoaded(AsyncOperationHandle<GameObject> obj)
+    {
+        if (obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            GameObject prefab = obj.Result;
+            GameObject instance = Instantiate(prefab, sceneAnimator.transform);
+            instance.transform.localPosition = Vector3.zero;
+            instance.transform.localRotation = prefab.transform.localRotation;
+            instance.transform.localScale = prefab.transform.localScale;
+        }
+        else
+        {
+            Debug.LogError("Failed to load prefab at address: " + address);
+        }
     }
 }

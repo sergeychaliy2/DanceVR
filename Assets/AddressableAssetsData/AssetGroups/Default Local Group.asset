@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 7b064809d27271a448749dbd026d0f14
+  m_SerializeEntries:
+  - m_GUID: 1e4b1740bf6d6b149bcb48b806e9e5f3
+    m_Address: AnimPref/TalkingDoctor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28f7f3f905eb47b4183c711fdb402157
+    m_Address: AnimPref/Jumping Jacks
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 724fc1b1035437b438e39ed4e2a70746
+    m_Address: AnimPref/Hip Hop Dancing
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26cc1554336835e4893325c6d1ae0357
+    m_Address: AnimPref/Overhead Squat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0516fe7e3291756498ceac1b9e95420d
+    m_Address: AnimPref/TalkingTeacher
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e92ba9cab1362a4ead6c732454671ea
+    m_Address: AnimPref/Kettlebell Swing
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4b8cdcb447d69c45b315b9b4e8efc98
+    m_Address: AnimPref/Burpee
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 968fcec20967a054686ff70bde994f21
+    m_Address: Assets/Ultimate 10 Plus Shaders/Materials/Unique/Ocean (2).mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7fb42690dbaf0d408f1f55ea89b7be8
+    m_Address: Assets/Hovl Studio/Magic effects pack/Materials/Star.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4bab0f95134663b4c9c3dd73939c0ff1
+    m_Address: Assets/Hovl Studio/Magic effects pack/Materials/Circle.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07553007ceddacc47bac6a131f3dc619
+    m_Address: Assets/Ultimate 10 Plus Shaders/Materials/Unique/Plasma (1).mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddac23d301cbfca45bcbe217c05f0141
+    m_Address: Assets/Hovl Studio/Magic effects pack/Materials/MagicCircle.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e546d2d7171981b468cf29388d902e99
+    m_Address: Assets/Hovl Studio/Magic effects pack/Materials/Point.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96d60590d2a3f0143a9a84d4568d9de8
+    m_Address: Assets/Hovl Studio/Magic effects pack/Materials/Mask1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efd1c33efd2d58340b88804268e6833f
+    m_Address: Assets/SkySeries Freebie/6SidedFluffball.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9dca9ae1786c394f9e79c637aa9a7bf
+    m_Address: Assets/SkySeries Freebie/Cloudymorning.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2341a9d03e86ec4290c72b1e22bbc7c
+    m_Address: Assets/SkySeries Freebie/HighFantasy.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85cf0b004bc4a654b9e501efcce47902
+    m_Address: Assets/SkySeries Freebie/CasualDay.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cede08c9fc471e64884909cd4bbeaf59
+    m_Address: Assets/SkySeries Freebie/MegaSun.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e391f00234292cc4f935308c11cf0e54
+    m_Address: Assets/SkySeries Freebie/CloudedSunGlow.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20d4f77b9022eab48b4d94599ed4bf82
+    m_Address: Assets/SkySeries Freebie/FluffballDay.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c52c5d7968fa6c9499b0b5752f899bfb
+    m_Address: Assets/SkySeries Freebie/6SidedMegaSun.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4454f71d85928744be7771e2143dab7
+    m_Address: Assets/SkySeries Freebie/CoriolisNight4k.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16bc8a9d5451ca44d8f70575adbece3a
+    m_Address: Assets/SkySeries Freebie/PlanetaryEarth.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f531e09e2ad2fb440b4eed7605863143
+    m_Address: Assets/SkySeries Freebie/6sidedCosmicCoolCloud.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72deae4d18418f94688abef8e8483df0
+    m_Address: Assets/SkySeries Freebie/AmbienceExposure.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 369b9ebe3a62b904dbc19bd332b44086
+    m_Address: Assets/SkySeries Freebie/CosmicCoolCloud_Eq.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 119ec07f1c7ed204db46bd8465fd5a50
+    m_Address: Assets/SkySeries Freebie/UnderTheSea4k.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e154bf235e41704bbd6bbc6fd6c63f6
+    m_Address: Assets/SkySeries Freebie/SunlessCirruscover.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f15c336556dd74f40aaca655f7767970
+    m_Address: Assets/SkySeries Freebie/SkyhighFluffycloudField.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d133deeaa66ed445853e946ff25e073
+    m_Address: Assets/SkySeries Freebie/UnearthlyRed.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2039a0ad0a9d05549928b70362f54902
+    m_Address: Assets/SkySeries Freebie/DarkStorm.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e5399bd195de7649b874f58c1b9f8a3
+    m_Address: Assets/SkySeries Freebie/DayInTheClouds.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d759c18d845960842a1c0412ba7b3c5c
+    m_Address: Assets/Ultimate 10 Plus Shaders/Materials/Skybox_Mat2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e79deb2e6d4a5b142a0efa22234d22f5
+    m_Address: Assets/Ultimate 10 Plus Shaders/Materials/Skybox_Mat.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be3abbe93cc356b4781351a61a58b811
+    m_Address: Assets/Environment/Skybox/Skybox_Day.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c5ad55f5e8bafa40a0176ccca197f44
+    m_Address: Assets/Environment/Skybox/Skybox_Night.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a51a87fb0e85d2d4bbb54b48d60fea20, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a1afff749287e2746a224dc30918e85c, type: 2}
+    - {fileID: 11400000, guid: 661d785952cef5f45ad04f835a315237, type: 2}
