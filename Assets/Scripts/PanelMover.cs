@@ -3,36 +3,32 @@ using UnityEngine.EventSystems;
 
 public class PanelMover : MonoBehaviour
 {
-    public float maxDistance = 2.0f; // Максимальное расстояние, на которое панель может приближаться к камере
-    public float smoothTime = 0.3f; // Время сглаживания
+    public float maxDistance = 2.0f;
+    public float smoothTime = 0.3f;
 
-    private Vector3 initialPosition; // Начальная позиция панели в мировых координатах
-    private Vector3 currentVelocity = Vector3.zero; // Для сглаживания движения
+    private Vector3 initialPosition;
+    private Vector3 currentVelocity = Vector3.zero;
     private bool isPointerOver = false;
 
-    private Camera mainCamera; // Главная камера
+    private Camera mainCamera;
 
     void Start()
     {
-        initialPosition = transform.position; // Сохраняем начальную позицию панели в мировых координатах
-        mainCamera = Camera.main; // Находим главную камеру
+        initialPosition = transform.position;
+        mainCamera = Camera.main; 
     }
 
     void Update()
     {
         Vector3 targetPosition = isPointerOver ? GetTargetPosition() : initialPosition;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime);
-        Debug.Log($"Current position: {transform.position}, Target position: {targetPosition}, isPointerOver: {isPointerOver}");
+       // Debug.Log($"Current position: {transform.position}, Target position: {targetPosition}, isPointerOver: {isPointerOver}");
     }
 
     private Vector3 GetTargetPosition()
     {
-        // Вычисляем направление от панели к камере
         Vector3 directionToCamera = (mainCamera.transform.position - initialPosition).normalized;
-
-        // Ограничиваем расстояние
         Vector3 targetPosition = initialPosition + directionToCamera * maxDistance;
-
         return targetPosition;
     }
 
