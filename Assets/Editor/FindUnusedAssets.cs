@@ -22,8 +22,6 @@ public class FindUnusedAssets : EditorWindow
     {
         string[] allAssets = AssetDatabase.GetAllAssetPaths();
         List<string> usedAssets = new List<string>();
-
-        // Получить зависимости для всех сцен
         string[] scenePaths = AssetDatabase.FindAssets("t:Scene");
         foreach (string guid in scenePaths)
         {
@@ -37,8 +35,6 @@ public class FindUnusedAssets : EditorWindow
                 }
             }
         }
-
-        // Проверить все ассеты в проекте, чтобы найти неиспользуемые скрипты
         foreach (string asset in allAssets)
         {
             if (asset.EndsWith(".cs") && !usedAssets.Contains(asset) && !asset.StartsWith("Assets/Editor"))
