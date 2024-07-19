@@ -21,9 +21,11 @@ namespace ColorfulHierarchy
         }
 
         [ContextMenuItem("Reset Text color", "ResetTXTColor")]
+        [SerializeField]
         public Color Text_Color = DEFAULT_TEXT_COLOR;
         public FontStyle TextStyle = FontStyle.Normal;
         [ContextMenuItem("Reset BG color", "ResetBGColor")]
+        [SerializeField]
         public Color Background_Color = DEFAULT_BACKGROUND_COLOR;
 
         public void ResetBGColor() { Background_Color = DEFAULT_BACKGROUND_COLOR; }

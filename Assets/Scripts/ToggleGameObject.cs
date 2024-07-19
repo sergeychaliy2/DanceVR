@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class ToggleGameObject : MonoBehaviour
 {
-    public GameObject settingsMenu;
-    public GameObject primeMenu;
+    [Header("Toggle")][Space]
+    [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject primeMenu;
 
     public void ActiveBackButton()
     {

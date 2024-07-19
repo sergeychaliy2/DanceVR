@@ -3,9 +3,10 @@ using UnityEngine.UI;
 
 public class ButtonMovement : MonoBehaviour
 {
-    public float moveDistance = 50f;
-    public float moveSpeed = 10f;
-    public float returnSpeed = 5f;
+    [Header("MOVEMENT")][Space]
+    [SerializeField] private float moveDistance = 50f;
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float returnSpeed = 5f;
 
     private Vector3 initialPosition;
     private bool isMoved = false;
@@ -36,7 +37,6 @@ public class ButtonMovement : MonoBehaviour
             }
         }
     }
-
     public void OnButtonClick()
     {
         if (!isMoved)

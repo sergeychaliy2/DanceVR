@@ -4,22 +4,26 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class LoadPrefab : MonoBehaviour
 {
-    public GameObject sceneAnimator;
-    public string address; // Адрес, используемый для загрузки ассета
+    [Header("Load Scene Animator")]
+    [Space]
+    [SerializeField] private GameObject sceneAnimator;
+    [SerializeField] private string address;
 
     public void LoadAndAttachPrefab()
     {
         if (string.IsNullOrEmpty(address))
         {
-            Debug.LogError("Адрес ассета не задан");
+            ErrorType.UnknownError.LogCustomError("Адрес ассета не задан");
             return;
         }
 
         if (sceneAnimator == null)
         {
-            Debug.LogError("Объект SceneAnimator не был передан через инспектор");
+            ErrorType.UnknownError.LogCustomError("Объект SceneAnimator не был передан через инспектор");
             return;
         }
+
+        DeleteAllPrefObjects();
 
         Addressables.LoadAssetAsync<GameObject>(address).Completed += OnPrefabLoaded;
     }
@@ -36,7 +40,16 @@ public class LoadPrefab : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Failed to load prefab at address: " + address);
+            ErrorType.UnknownError.LogCustomError("Не удалось загрузить префаб по адресу: " + address);
+        }
+    }
+
+    private void DeleteAllPrefObjects()
+    {
+        GameObject[] prefObjects = GameObject.FindGameObjectsWithTag("Pref");
+        foreach (GameObject obj in prefObjects)
+        {
+            Destroy(obj);
         }
     }
 }
