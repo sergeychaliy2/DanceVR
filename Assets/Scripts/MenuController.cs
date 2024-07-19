@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject primeMenuButton;
-    public GameObject exitConfirmation;
+    [SerializeField] private GameObject primeMenuButton;
+    [SerializeField] private GameObject exitConfirmation;
 
     //off PrimeMenuButton
     public void ShowExitConfirmation()

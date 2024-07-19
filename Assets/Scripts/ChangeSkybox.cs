@@ -5,7 +5,8 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ChangeSkybox : MonoBehaviour
 {
-    public string skyboxAddress;
+    [Header("Type Skybox")]
+    [SerializeField] private string skyboxAddress;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class ChangeSkybox : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Адрес ассета скайбокса не задан");
+            ErrorType.UnknownError.LogCustomError("Адрес ассета скайбокса не задан");
         }
     }
 
@@ -40,12 +41,12 @@ public class ChangeSkybox : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Загруженный материал скайбокса равен null");
+                ErrorType.UnknownError.LogCustomError("Загруженный материал скайбокса равен null");
             }
         }
         else
         {
-            Debug.LogError("Не удалось загрузить материал скайбокса по адресу: " + skyboxAddress);
+            ErrorType.UnknownError.LogCustomError("Не удалось загрузить материал скайбокса по адресу: " + skyboxAddress);
         }
     }
 }

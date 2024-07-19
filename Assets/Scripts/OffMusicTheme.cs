@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class OffMusicTheme : MonoBehaviour
 {
-    public GameObject sliderMusic;
-    public GameObject themeList;
+    [Header("Music Theme")] [Space]
+    [SerializeField] private GameObject sliderMusic;
+    [SerializeField] private GameObject themeList;
 
     public void MuteMusic()
     {

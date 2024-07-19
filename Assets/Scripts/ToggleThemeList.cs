@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class ToggleThemeList : MonoBehaviour
 {
-    public GameObject themeList;
+    [Header("Type Theme")]
+    [SerializeField] private GameObject themeList;
     public void ToggleThemeListVisibility()
     {
         if (themeList != null)

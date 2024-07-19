@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 3819376128528462539}
   m_Layer: 0
   m_Name: TalkingDoctor
-  m_TagString: Untagged
+  m_TagString: Pref
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

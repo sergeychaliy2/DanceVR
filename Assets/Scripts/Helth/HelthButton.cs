@@ -5,17 +5,12 @@ using UnityEngine;
 public class HelthButton : MonoBehaviour
 {
     // List of GameObjects to disable
-    [SerializeField]
-    private List<GameObject> objectsToDisable;
-
+    [SerializeField] private List<GameObject> objectsToDisable;
+    [Space]
     // List of GameObjects to enable
-    [SerializeField]
-    private List<GameObject> objectsToEnable;
-
-    // Function to disable and enable the specified GameObjects
+    [SerializeField] private List<GameObject> objectsToEnable;
     public void ToggleObjects()
     {
-        // Disable specified GameObjects
         foreach (GameObject obj in objectsToDisable)
         {
             if (obj != null)
@@ -23,8 +18,6 @@ public class HelthButton : MonoBehaviour
                 obj.SetActive(false);
             }
         }
-
-        // Enable specified GameObjects
         foreach (GameObject obj in objectsToEnable)
         {
             if (obj != null)

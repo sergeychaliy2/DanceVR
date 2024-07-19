@@ -3,14 +3,13 @@ using UnityEngine.EventSystems;
 
 public class PanelMover : MonoBehaviour
 {
-    public float maxDistance = 2.0f;
-    public float smoothTime = 0.3f;
-
+    [Header("Mover")][Space]
+    [SerializeField] private float maxDistance = 2.0f;
+    [SerializeField] private float smoothTime = 0.3f;
+    [SerializeField] private Camera mainCamera;
     private Vector3 initialPosition;
     private Vector3 currentVelocity = Vector3.zero;
     private bool isPointerOver = false;
-
-    private Camera mainCamera;
 
     void Start()
     {

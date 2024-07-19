@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ModeActive : MonoBehaviour
 {
-    public GameObject modeDance;
-    public GameObject modeHelth;
-    public GameObject modeSport;
-    public GameObject primeMenu;
+    [Header("Mode Active")][Space]
+    [SerializeField] private GameObject modeDance;
+    [SerializeField] private GameObject modeHelth;
+    [SerializeField] private GameObject modeSport;
+    [SerializeField] private GameObject primeMenu;
 
     public void ActiveMode()
     {
