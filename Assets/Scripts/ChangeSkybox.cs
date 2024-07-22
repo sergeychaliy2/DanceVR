@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ChangeSkybox : MonoBehaviour
@@ -8,12 +7,25 @@ public class ChangeSkybox : MonoBehaviour
     [Header("Type Skybox")]
     [SerializeField] private string skyboxAddress;
 
-    void Start()
+    private IErrorHandler errorHandler;
+    private IAssetLoader assetLoader;
+
+    private void Awake()
+    {
+        errorHandler = new ErrorHandler();
+        assetLoader = new AssetLoader();
+    }
+
+    private void Start()
     {
         Button button = GetComponent<Button>();
         if (button != null)
         {
             button.onClick.AddListener(ChangeSkyboxMaterial);
+        }
+        else
+        {
+            errorHandler.LogCustomError(ErrorType.UnknownError, "Button component is missing.");
         }
     }
 
@@ -21,19 +33,20 @@ public class ChangeSkybox : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(skyboxAddress))
         {
-            Addressables.LoadAssetAsync<Material>(skyboxAddress).Completed += OnSkyboxLoaded;
+            AsyncOperationHandle<Material> handle = assetLoader.LoadAssetAsync<Material>(skyboxAddress);
+            handle.Completed += OnSkyboxLoaded;
         }
         else
         {
-            ErrorType.UnknownError.LogCustomError("Адрес ассета скайбокса не задан");
+            errorHandler.LogCustomError(ErrorType.UnknownError, "Skybox asset address is not set.");
         }
     }
 
-    private void OnSkyboxLoaded(AsyncOperationHandle<Material> obj)
+    private void OnSkyboxLoaded(AsyncOperationHandle<Material> handle)
     {
-        if (obj.Status == AsyncOperationStatus.Succeeded)
+        if (handle.Status == AsyncOperationStatus.Succeeded)
         {
-            Material newSkyboxMaterial = obj.Result;
+            Material newSkyboxMaterial = handle.Result;
             if (newSkyboxMaterial != null)
             {
                 RenderSettings.skybox = newSkyboxMaterial;
@@ -41,12 +54,12 @@ public class ChangeSkybox : MonoBehaviour
             }
             else
             {
-                ErrorType.UnknownError.LogCustomError("Загруженный материал скайбокса равен null");
+                errorHandler.LogCustomError(ErrorType.UnknownError, "Loaded skybox material is null.");
             }
         }
         else
         {
-            ErrorType.UnknownError.LogCustomError("Не удалось загрузить материал скайбокса по адресу: " + skyboxAddress);
+            errorHandler.LogCustomError(ErrorType.UnknownError, $"Failed to load skybox material from address: {skyboxAddress}");
         }
     }
 }

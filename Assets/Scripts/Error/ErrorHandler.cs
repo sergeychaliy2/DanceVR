@@ -1,7 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ErrorHandler
+public interface IErrorHandler
+{
+    void LogError(ErrorType errorType);
+    void LogCustomError(ErrorType errorType, string message);
+    string GetErrorMessage(ErrorType errorType);
+}
+public class ErrorHandler : IErrorHandler
 {
     private static readonly Dictionary<ErrorType, string> errorMessages = new Dictionary<ErrorType, string>
     {
@@ -13,13 +19,13 @@ public static class ErrorHandler
         { ErrorType.UnknownError, "An unknown error occurred." }
     };
 
-    public static void LogError(ErrorType errorType)
+    public void LogError(ErrorType errorType)
     {
         string errorMessage = GetErrorMessage(errorType);
         Debug.Log($"Error: {errorMessage}");
     }
 
-    public static void LogCustomError(ErrorType errorType, string message)
+    public void LogCustomError(ErrorType errorType, string message)
     {
         if (errorMessages.ContainsKey(errorType))
         {
@@ -32,7 +38,7 @@ public static class ErrorHandler
         Debug.Log($"Error: {message}");
     }
 
-    public static string GetErrorMessage(ErrorType errorType)
+    public string GetErrorMessage(ErrorType errorType)
     {
         if (errorMessages.TryGetValue(errorType, out string errorMessage))
         {

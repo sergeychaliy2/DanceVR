@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class HelthButton : MonoBehaviour
 {
-    // List of GameObjects to disable
     [SerializeField] private List<GameObject> objectsToDisable;
     [Space]
-    // List of GameObjects to enable
     [SerializeField] private List<GameObject> objectsToEnable;
     public void ToggleObjects()
     {

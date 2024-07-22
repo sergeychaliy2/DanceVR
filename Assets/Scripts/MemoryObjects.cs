@@ -7,8 +7,12 @@ public class MemoryObjectEntry
     public string key;
     public Object value;
 }
+public interface IMemoryObjects
+{
+    T GetObject<T>(string key) where T : Object;
+}
 
-public class MemoryObjects : MonoBehaviour
+public class MemoryObjects : MonoBehaviour, IMemoryObjects
 {
     private static MemoryObjects _instance;
 
@@ -61,7 +65,7 @@ public class MemoryObjects : MonoBehaviour
             }
             else
             {
-                ErrorType.UnknownError.LogCustomError("Duplicate key found in memoryObjects: " + entry.key);
+                ErrorType.UnknownError.LogCustomError($"Duplicate key found in memoryObjects: {entry.key}");
             }
         }
     }
@@ -74,7 +78,7 @@ public class MemoryObjects : MonoBehaviour
         }
         else
         {
-            ErrorType.UnknownError.LogCustomError("Object with key " + key + " not found.");
+            ErrorType.UnknownError.LogCustomError($"Object with key {key} not found.");
             return null;
         }
     }

@@ -3,7 +3,14 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 
-public class PauseGame : MonoBehaviour
+public interface IPauseGameController
+{
+    void Pause();
+    void Resume();
+    void TogglePause();
+}
+
+public class PauseGame : MonoBehaviour, IPauseGameController
 {
     private bool isPaused = false;
     [SerializeField] private List<GameObject> objectsToDisable;
@@ -27,7 +34,7 @@ public class PauseGame : MonoBehaviour
         }
     }
 
-    void TogglePause()
+    public void TogglePause()
     {
         if (isPaused)
         {
@@ -64,7 +71,7 @@ public class PauseGame : MonoBehaviour
             }
         }
 
-        ErrorType.UnknownError.LogCustomError("Игра на паузе");
+        ErrorType.UnknownError.LogCustomError("Game paused.");
     }
 
     public void Resume()
@@ -86,6 +93,6 @@ public class PauseGame : MonoBehaviour
             entry.Key.Play();
         }
 
-        ErrorType.UnknownError.LogCustomError("Игра возобновлена");
+        ErrorType.UnknownError.LogCustomError("Game resumed.");
     }
 }

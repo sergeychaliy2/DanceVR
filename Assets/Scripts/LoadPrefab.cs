@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using System.Collections.Generic;
 
 public class LoadPrefab : MonoBehaviour
 {
@@ -9,17 +10,19 @@ public class LoadPrefab : MonoBehaviour
     [SerializeField] private GameObject sceneAnimator;
     [SerializeField] private string address;
 
+    private List<GameObject> instantiatedPrefabs = new List<GameObject>();
+
     public void LoadAndAttachPrefab()
     {
         if (string.IsNullOrEmpty(address))
         {
-            ErrorType.UnknownError.LogCustomError("Адрес ассета не задан");
+            ErrorType.UnknownError.LogCustomError("Asset address is not set.");
             return;
         }
 
         if (sceneAnimator == null)
         {
-            ErrorType.UnknownError.LogCustomError("Объект SceneAnimator не был передан через инспектор");
+            ErrorType.UnknownError.LogCustomError("SceneAnimator object not assigned in the inspector.");
             return;
         }
 
@@ -28,28 +31,39 @@ public class LoadPrefab : MonoBehaviour
         Addressables.LoadAssetAsync<GameObject>(address).Completed += OnPrefabLoaded;
     }
 
-    private void OnPrefabLoaded(AsyncOperationHandle<GameObject> obj)
+    private void OnPrefabLoaded(AsyncOperationHandle<GameObject> handle)
     {
-        if (obj.Status == AsyncOperationStatus.Succeeded)
+        if (handle.Status == AsyncOperationStatus.Succeeded)
         {
-            GameObject prefab = obj.Result;
-            GameObject instance = Instantiate(prefab, sceneAnimator.transform);
-            instance.transform.localPosition = Vector3.zero;
-            instance.transform.localRotation = prefab.transform.localRotation;
-            instance.transform.localScale = prefab.transform.localScale;
+            GameObject prefab = handle.Result;
+            if (prefab != null)
+            {
+                GameObject instance = Instantiate(prefab, sceneAnimator.transform);
+                instance.transform.localPosition = Vector3.zero;
+                instance.transform.localRotation = prefab.transform.localRotation;
+                instance.transform.localScale = prefab.transform.localScale;
+                instantiatedPrefabs.Add(instance);
+            }
+            else
+            {
+                ErrorType.UnknownError.LogCustomError("Loaded prefab is null.");
+            }
         }
         else
         {
-            ErrorType.UnknownError.LogCustomError("Не удалось загрузить префаб по адресу: " + address);
+            ErrorType.UnknownError.LogCustomError("Failed to load prefab from address: " + address);
         }
     }
 
     private void DeleteAllPrefObjects()
     {
-        GameObject[] prefObjects = GameObject.FindGameObjectsWithTag("Pref");
-        foreach (GameObject obj in prefObjects)
+        foreach (GameObject obj in instantiatedPrefabs)
         {
-            Destroy(obj);
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
         }
+        instantiatedPrefabs.Clear();
     }
 }

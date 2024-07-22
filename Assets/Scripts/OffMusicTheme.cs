@@ -3,9 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OffMusicTheme : MonoBehaviour
+public interface IMusicThemeController
 {
-    [Header("Music Theme")] [Space]
+    void MuteMusic();
+    void OffShowThemeList();
+    void OnMuteMusic();
+    void OnShowThemeList();
+    void AllMusicTheme();
+}
+
+public class OffMusicTheme : MonoBehaviour, IMusicThemeController
+{
+    [Header("Music Theme"),Space] 
     [SerializeField] private GameObject sliderMusic;
     [SerializeField] private GameObject themeList;
 

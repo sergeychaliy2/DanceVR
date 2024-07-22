@@ -6,4 +6,4 @@ public enum ErrorType
     OperationFailed,
     UnauthorizedAccess,
     UnknownError
-}
+}   
